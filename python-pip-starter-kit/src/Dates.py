@@ -19,35 +19,35 @@ class Dates:
         months = self.helper(music_storage, subscription_type)
         notification_date = self.calDate(starting_date, months)
         return notification_date.strftime("%d-%m-%Y")
-    
+
     def calVideoDate(self, storage_factory, starting_date, service):
         video_storage = storage_factory.createStorage("VIDEO")
         subscription_type = service.getSubscription()
         months = self.helper(video_storage, subscription_type)
         notification_date = self.calDate(starting_date, months)
         return notification_date.strftime("%d-%m-%Y")
-    
+
     def calPodCastDate(self, storage_factory, starting_date, service):
         podcast_storage = storage_factory.createStorage("PODCAST")
         subscription_type = service.getSubscription()
         months = self.helper(podcast_storage, subscription_type)
         notification_date = self.calDate(starting_date, months)
         return notification_date.strftime("%d-%m-%Y")
-        
+
     def helper(self, storage, subscription_type):
         subscription_type=subscription_type.strip()
         if subscription_type == "FREE":
             return storage.getTimeFree()
         elif subscription_type == "PERSONAL":
-      
+
             return storage.getTimePersonal()
         elif subscription_type == "PREMIUM":
-          
+
             return storage.getTimePremium()
-    
+
     def calDate(self, starting_date, months):
         if months is None:
-    
+
             return None  # Handle this situation appropriately
 
     # Proceed with calculations if months is valid
