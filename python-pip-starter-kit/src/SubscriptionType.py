@@ -5,4 +5,3 @@ class SubscriptionType(Enum):
     PERSONAL = "PERSONAL"
     PREMIUM = "PREMIUM"
 
-    

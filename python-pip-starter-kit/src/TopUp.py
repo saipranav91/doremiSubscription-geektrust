@@ -13,7 +13,7 @@ class TopUp_4(TopUp):
         super().__init__() 
         self._price=50 
         self._time=1 
-    
+
     def getPrice(self):
         return self._price 
     def getTime(self):
@@ -38,7 +38,6 @@ class TopUpBuilder:
     def createTopUp(self,number_of_devices):
         if number_of_devices in self.topup_list:
             return self.topup_list[number_of_devices]
-        
-             
 
-    
+
+

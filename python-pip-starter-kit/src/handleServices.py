@@ -13,8 +13,8 @@ class handleServices:
             subscription_context.customer_builder.addDate(date)
         except:
             subscription_context.subscription_manager.handleInvalidDate()
-            
-            
+
+
     def handleAddService(self,service_name,subscription_type,subscription_context):
         if not subscription_context.subscription_manager.invalid_date:
             service=subscription_context.service_factory.create_service(service_name,subscription_type)
@@ -43,7 +43,7 @@ class handleServices:
         if not subscription_context.customer_builder.checkBeforeAddTopUp():
             subscription_context.subscription_manager.handleTopUpWithOutSubscription()
             return
-    
+
         try:
             subscription_context.customer_builder.addTopUp(number_of_devices, number_of_months)
         except:

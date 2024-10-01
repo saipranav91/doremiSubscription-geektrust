@@ -29,9 +29,9 @@ class Customer:
         return True
 
     def addTopUp(self, number_of_devices, number_of_months):
-       
+
         self._topup[number_of_devices] = number_of_months
-        
+
     def getTopUp(self):
         return self._topup
 
@@ -52,7 +52,7 @@ class CustomerBuilder:
 
     def addDate(self, date):
         self.customer.setDate(date)
-   
+
         return self
 
     def addService(self, service):
@@ -61,18 +61,18 @@ class CustomerBuilder:
         service.setDate(self.customer.getDate())  # calling the self.customer instance in CustomerBuilder not customer
         self.customer.addServices(service)
         return self
-    
+
     def checkBeforeAddTopUp(self):
         return self.customer.hasServices()
 
     def addTopUp(self, number_of_devices, number_of_months):
-    
+
         if self.customer.checkTopUp():
-      
+
             self.customer.addTopUp(number_of_devices, number_of_months)
             return self
         else:
-         
+
             raise Exception("DUPLICATE TOPUP")
 
     def build(self):

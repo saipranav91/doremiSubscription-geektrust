@@ -19,7 +19,7 @@ def main():
     subscription_manager=SubscriptionManaager()
     input=Input()
     subscription_context=SubscriptionContext(service_factory,customer_builder,subscription_manager)
-    
+
     filePath=input.validate_args(argv)
     input.process_file(filePath,subscription_context)
     customer=customer_builder.build() 
@@ -31,35 +31,34 @@ def main():
     min_length=0
     if len(customer.getServices())==min_length:
         print("SUBSCRIPTIONS_NOT_FOUND") 
- 
-    
-    
+
+
+
 def printSummary(total_fare,notification_dates):
     if notification_dates:
         for sub_type in notification_dates:
             print(f"RENEWAL_REMINDER {sub_type} {notification_dates[sub_type]}")
 
-    
+
     if total_fare:
         print(f"RENEWAL_AMOUNT {total_fare}")
-    
 
 
-    
-    
 
 
-        
-        
-            
-        
-        
-    
-    
 
-       
-    
-        
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

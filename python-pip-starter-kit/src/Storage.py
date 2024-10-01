@@ -6,7 +6,7 @@ class Storage(ABC):
         self._time_free=1 
         self._time_personal=1
         self._time_premium=3
-    
+
     def getFree(self):
         return self._free 
     def getTimeFree(self):
@@ -21,13 +21,13 @@ class Storage(ABC):
     @abstractmethod
     def getPremium(self):
         pass
-    
+
 class Music(Storage):
     def __init__(self):
         super().__init__() 
         self._personal=100 
         self._premium=250
-    
+
     def getPersonal(self):
         return self._personal
     def getPremium(self):
@@ -38,7 +38,7 @@ class PodCast(Storage):
         super().__init__() 
         self._personal=100 
         self._premium=300
-    
+
     def getPersonal(self):
         return self._personal
     def getPremium(self):
@@ -50,7 +50,7 @@ class VideoStreaming(Storage):
         super().__init__() 
         self._personal=200 
         self._premium=500
-    
+
     def getPersonal(self):
         return self._personal
     def getPremium(self):
@@ -65,7 +65,7 @@ class StorageFactory:
         }
     def addSubscriptionType(self,key,value):
         self.addSubscriptionType[key]=value 
-        
+
     def createStorage(self,service_type):
         if service_type in self.subscription_types:
             return self.subscription_types[service_type]
